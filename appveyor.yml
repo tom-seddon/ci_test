@@ -9,7 +9,7 @@ image: Visual Studio 2015
 
 build_script:
   - cmd: set
-  - cmd: python ./build.py %appveyor_repo_commit
+  - cmd: python ./build.py %appveyor_repo_commit%
 
 artifacts:
   - path: './output-*.txt'
