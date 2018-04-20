@@ -20,7 +20,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: sPHckOjYjTNtIT8ZUYl13F1K/G9deDsVQCWZ/yyHF99/l2N9O65wJBqMeDcilCA8
-  artifact: './output-*.txt'
+  artifact: 'output-*.txt'
   draft: false
   prerelease: false
   on:
