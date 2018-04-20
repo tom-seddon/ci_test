@@ -1,7 +1,7 @@
 import sys,argparse
 
 def main():
-    suffix=sys.argv[1]
+    suffix=sys.argv[1].replace(':','.')
 
     fname='output-%s.txt'%suffix
     print 'output name: %s'%fname
