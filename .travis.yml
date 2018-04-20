@@ -8,7 +8,4 @@ branches:
     - master
     - build
 
-before_install:
-  - brew install ninja
-
 script: echo $(TRAVIS_COMMIT)
