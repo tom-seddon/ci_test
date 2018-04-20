@@ -1,0 +1,26 @@
+version: '{build}'
+
+branches:
+  only:
+    - master
+    - build
+
+image: Visual Studio 2015
+
+build_script:
+  - python ./build.py $(appveyor_repo_commit)
+
+artifacts:
+  - path: './output-*.txt'
+
+deploy:
+  release: ci_test-$(appveyor_repo_commit)
+  description: 'ci_test'
+  provider: GitHub
+  auth_token:
+    secure: 
+  artifact: './output-*.txt'
+  draft: false
+  prerelease: false
+  on:
+    branch: build
