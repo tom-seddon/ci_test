@@ -16,7 +16,7 @@ artifacts:
     name: output
 
 deploy:
-  release: ci_test-$(appveyor_repo_commit)
+  release: ci_test-$(APPVEYOR_REPO_COMMIT_TIMESTAMP)-$(appveyor_repo_commit)
   description: 'ci_test'
   provider: GitHub
   auth_token:
