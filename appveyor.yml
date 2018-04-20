@@ -12,7 +12,7 @@ build_script:
   - cmd: python ./build.py %appveyor_repo_commit%
 
 artifacts:
-  - path: './output-*.txt'
+  - path: ./output-*.txt
 
 deploy:
   release: ci_test-$(appveyor_repo_commit)
