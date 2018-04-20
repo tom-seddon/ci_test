@@ -11,12 +11,15 @@ build_script:
   - cmd: set
   - cmd: python ./build.py %appveyor_repo_commit%-appveyor
 
+before_deploy:
+  - ps: $env:NAME = ci_test-$env:APPVEYOR_REPO_COMMIT_TIMESTAMP.Replace(":",".")
+
 artifacts:
   - path: ./output-*.txt
     name: output
 
 deploy:
-  release: ci_test-$(APPVEYOR_REPO_COMMIT_TIMESTAMP)-$(appveyor_repo_commit)
+  release: $(NAME)
   description: 'ci_test'
   provider: GitHub
   auth_token:
