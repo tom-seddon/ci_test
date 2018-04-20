@@ -18,7 +18,7 @@ deploy:
   description: 'ci_test'
   provider: GitHub
   auth_token:
-    secure: 
+    secure: sPHckOjYjTNtIT8ZUYl13F1K/G9deDsVQCWZ/yyHF99/l2N9O65wJBqMeDcilCA8
   artifact: './output-*.txt'
   draft: false
   prerelease: false
