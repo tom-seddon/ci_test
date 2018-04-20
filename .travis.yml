@@ -8,4 +8,6 @@ branches:
     - master
     - build
 
-script: echo $TRAVIS_COMMIT
+script:
+  - env
+  - echo $TRAVIS_COMMIT
