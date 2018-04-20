@@ -8,4 +8,4 @@ branches:
     - master
     - build
 
-script: echo $(TRAVIS_COMMIT)
+script: echo $TRAVIS_COMMIT
