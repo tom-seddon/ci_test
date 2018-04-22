@@ -17,8 +17,8 @@ build_script:
   - ps: python ./build.py $env:OUTPUT_NAME
 
 artifacts:
-  - path: 
-    name: $(OUTPUT_NAME)
+  - path: $(OUTPUT_NAME)
+    name: output
 
 deploy:
   release: $(NAME)
