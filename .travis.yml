@@ -14,6 +14,12 @@ script:
   - export OUTPUT_NAME=ci_test-osx-$SUFFIX
   - env
   - python ./build.py $OUTPUT_NAME
+
+before_deploy:
+  # https://docs.travis-ci.com/user/deployment/releases/
+  - git config --local user.name "Tom Seddon"
+  - git config --local user.email "modelb@bbcmicro.com"
+  - git tag $RELEASE_NAME
   
 deploy:
   provider: releases
