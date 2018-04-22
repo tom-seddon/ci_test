@@ -12,7 +12,7 @@ build_script:
   - cmd: python ./build.py %appveyor_repo_commit%-appveyor
 
 before_deploy:
-  - ps: $env:NAME = "ci_test-"+$env:APPVEYOR_REPO_COMMIT_TIMESTAMP.Replace(":",".")
+  - ps: $env:NAME = "ci_test-"+$(git log -1 --format=%cd-%h --date=format:%y%m%d-%H%M%S $env:APPVEYOR_REPO_COMMIT)
 
 artifacts:
   - path: ./output-*.txt
