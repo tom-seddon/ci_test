@@ -21,7 +21,7 @@ artifacts:
     name: output
 
 deploy:
-  release: $(NAME)
+  release: $(RELEASE_NAME)
   description: 'ci_test'
   provider: GitHub
   auth_token:
