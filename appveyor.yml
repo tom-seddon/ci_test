@@ -8,15 +8,17 @@ branches:
 image: Visual Studio 2015
 
 install:
-  - ps: $env:NAME = "ci_test-"+$(git log -1 --format=%cd-%h --date=format:%y%m%d-%H%M%S $env:APPVEYOR_REPO_COMMIT)
+  - ps: $env:SUFFIX = $(git log -1 --format=%cd-%h --date=format:%y%m%d-%H%M%S $env:APPVEYOR_REPO_COMMIT)
+  - ps: $env:RELEASE_NAME = "ci_test-"+$env:SUFFIX
+  - ps: $env:OUTPUT_NAME = "ci_test-windows-"+$env:SUFFIX
 
 build_script:
   - ps: env
-  - ps: python ./build.py $env:NAME
+  - ps: python ./build.py $env:OUTPUT_NAME
 
 artifacts:
-  - path: ./output-$(NAME).txt
-    name: output
+  - path: 
+    name: $(OUTPUT_NAME)
 
 deploy:
   release: $(NAME)

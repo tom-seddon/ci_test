@@ -1,9 +1,8 @@
 import sys,argparse
 
 def main():
-    suffix=sys.argv[1].replace(':','.')
-
-    fname='output-%s.txt'%suffix
+    fname=sys.argv[1]
+    
     print 'output name: %s'%fname
 
     with open(fname,'wt') as f: f.write("hello. %s\n"%suffix)

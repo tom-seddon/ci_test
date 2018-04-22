@@ -9,6 +9,9 @@ branches:
     - build
 
 script:
-  - export NAME=ci_test-$(git log -1 --format=%cd-%h --date=format:%y%m%d-%H%M%S $TRAVIS_COMMIT)
+  - export SUFFIX=$(git log -1 --format=%cd-%h --date=format:%y%m%d-%H%M%S $TRAVIS_COMMIT)
+  - export RELEASE_NAME=ci_test-$SUFFIX
+  - export OUTPUT_NAME=ci_test-osx-$SUFFIX
   - env
-  - echo $NAME
+  - python ./build.py $OUTPUT_NAME
+  
