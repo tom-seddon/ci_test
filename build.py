@@ -5,7 +5,7 @@ def main():
     
     print 'output name: %s'%fname
 
-    with open(fname,'wt') as f: f.write("hello. %s\n"%suffix)
+    with open(fname,'wt') as f: f.write("hello. %s\n"%fname)
 
 if __name__=="__main__":
     main()
