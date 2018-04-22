@@ -22,6 +22,4 @@ deploy:
   file: $(OUTPUT_NAME)
   skip_cleanup: true
   on:
-    branches:
-      only:
-        - build
+    branch: build
