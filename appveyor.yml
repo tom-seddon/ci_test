@@ -7,15 +7,15 @@ branches:
 
 image: Visual Studio 2015
 
-build_script:
-  - cmd: set
-  - cmd: python ./build.py %appveyor_repo_commit%-appveyor
-
-before_deploy:
+install:
   - ps: $env:NAME = "ci_test-"+$(git log -1 --format=%cd-%h --date=format:%y%m%d-%H%M%S $env:APPVEYOR_REPO_COMMIT)
 
+build_script:
+  - ps: env
+  - ps: python ./build.py $env:NAME
+
 artifacts:
-  - path: ./output-*.txt
+  - path: ./output-$(NAME).txt
     name: output
 
 deploy:
