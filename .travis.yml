@@ -9,5 +9,6 @@ branches:
     - build
 
 script:
+  - export NAME=ci_test-$(git log -1 --format=%cd-%h --date=format:%y%m%d-%H%M%S $TRAVIS_COMMIT)
   - env
-  - echo $TRAVIS_COMMIT
+  - echo $NAME
