@@ -10,7 +10,7 @@ image: Visual Studio 2015
 install:
   - ps: $env:SUFFIX = $(git log -1 --format=%cd-%h --date=format:%Y%m%d-%H%M%S $env:APPVEYOR_REPO_COMMIT)
   - ps: $env:RELEASE_NAME = "ci_test-"+$env:SUFFIX
-  - ps: $env:OUTPUT_NAME = "./ci_test-windows-"+$env:SUFFIX
+  - ps: $env:OUTPUT_NAME = ".\ci_test-windows-"+$env:SUFFIX
 
 build_script:
   - ps: env
