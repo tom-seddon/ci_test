@@ -37,3 +37,4 @@ deploy:
     script: curl --verbose --ftp-create-dirs -T ${OUTPUT_NAME} --key /tmp/sftp_rsa sftp://ci_test_upload:${FFE3_PASSWORD}@ffe3.com/ffe3.com/ci_test/${OUTPUT_NAME}
     on:
       branch: master
+    skip_cleanup: true
