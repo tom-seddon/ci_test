@@ -34,7 +34,7 @@ deploy:
     on:
       branch: build
   - provider: script
-    script: sshpass -p${FFE3_PASSWORD} scp ${OUTPUT_NAME} ci_test_upload@ffe3.com:ffe3.com/ci_test/${OUTPUT_NAME}
+    script: ftp -u ftp://ci_test_upload:${FFE3_PASSWORD}@ffe3.com/ffe3.com/ci_test/${OUTPUT_NAME} ${OUTPUT_NAME}
     on:
       branch: master
     skip_cleanup: true
