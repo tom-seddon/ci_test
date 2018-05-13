@@ -21,26 +21,24 @@ artifacts:
     name: output
 
 deploy:
-  release: $(RELEASE_NAME)
-  description: 'ci_test'
-  provider: GitHub
-  auth_token:
-    secure: sPHckOjYjTNtIT8ZUYl13F1K/G9deDsVQCWZ/yyHF99/l2N9O65wJBqMeDcilCA8
-  artifact: output
-  draft: false
-  prerelease: false
-  on:
-    branch: build
-
-deploy:
-  provider: FTP
-  protocol: sftp
-  host: ffe3.com
-  username: ci_test_upload
-  password:
-    secure: qf5Ig6PjHc2imqjz1w62HFET7I2imMilTnZIdhoZ6AU=
-  folder: ffe3.com/ci_test
-  artifact: output
-  on:
-    branch: master
+  - release: $(RELEASE_NAME)
+    description: 'ci_test'
+    provider: GitHub
+    auth_token:
+      secure: sPHckOjYjTNtIT8ZUYl13F1K/G9deDsVQCWZ/yyHF99/l2N9O65wJBqMeDcilCA8
+    artifact: output
+    draft: false
+    prerelease: false
+    on:
+      branch: build
+  - provider: FTP
+    protocol: sftp
+    host: ffe3.com
+    username: ci_test_upload
+    password:
+      secure: qf5Ig6PjHc2imqjz1w62HFET7I2imMilTnZIdhoZ6AU=
+    folder: ffe3.com/ci_test
+    artifact: output
+    on:
+      branch: master
     
