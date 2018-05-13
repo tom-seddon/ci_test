@@ -31,3 +31,16 @@ deploy:
   prerelease: false
   on:
     branch: build
+
+deploy:
+  provider: FTP
+  protocol: sftp
+  host: ffe3.com
+  username: ci_test_upload
+  password:
+    secure: qf5Ig6PjHc2imqjz1w62HFET7I2imMilTnZIdhoZ6AU=
+  folder: ffe3.com/ci_test
+  artifact: output
+  on:
+    branch: master
+    
