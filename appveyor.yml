@@ -19,6 +19,7 @@ build_script:
 artifacts:
   - path: $(OUTPUT_NAME)
     name: output
+    type: File
 
 deploy:
   - release: $(RELEASE_NAME)
